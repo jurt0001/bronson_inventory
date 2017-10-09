@@ -5,7 +5,7 @@ ul {
 }
 
 .list-menu{
-    width:80%;
+    width:95%;
     margin: 0 auto;
     margin-top: 10px;
     background-color: white;
@@ -51,21 +51,33 @@ h2 {
 }
 
 form {
-    padding: 8px 24px;
-    margin-left: 17%;
+    padding: 8px 0px;
+    width: 100%;
+    margin: 50px auto;
+    
 }
 form > input,
 form > button,
 form > textarea {
     display: block;
-    width: 240px;
-    padding: 4px 8px;
-    margin-bottom: 8px;
+    width: 70%;
+    margin-left: 145px;
+    margin-right: 10px;
+    margin-bottom: 30px;
     border-radius: 3px;
-    border: 2px solid black;
-    font-size: 1.0em;
+    border: 1px solid black;
+    font-size: 3.0em; 
+    height: 80px
+}
+
+form > button {
+    background-color: green;
+    font-size: 2.6em;
+    color: white;
     
 }
+
+
 
 .nav-menu {
     border-radius: 10px;
@@ -102,7 +114,7 @@ form > textarea {
 
 .bottle-div{
     width: 100%;
-    margin: 0 auto;    
+    margin: 100px auto;    
 }
 
 .item-header{

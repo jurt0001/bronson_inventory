@@ -19,7 +19,8 @@ var Header = React.createClass({
 	propTypes: {},
 	render: function render() {
 		return React.createElement('div', { className: 'header' }, //setting header className
-		React.createElement('p', {}, 'Bronson Centre Inventory') //hardcoding Page Title
+		React.createElement('h1', {}, 'BC Inventory'),
+        React.createElement('hr', {})//hardcoding Page Title
 		//,React.createElement('p', {}, React.createElement('img', { src: 'images/launcher_white_copy.png', width: '200px' }) //creating logo and setting size
 	//	)
                                   
@@ -50,9 +51,8 @@ var Header3 = React.createClass({
 	propTypes: {},
 	render: function render() {
 		return React.createElement('div', { className: 'header' }, //setting header className
-		React.createElement('p', {}, 'Add an Item'), //hardcoding Page Title
-		React.createElement('p', {}, React.createElement('img', { src: 'images/launcher_blue.png', width: '200px' }) //creating logo and setting size
-		));
+		React.createElement('h1', {}, 'Add an Item'), //hardcoding Page Title
+		);
 	}
 });
 
@@ -120,9 +120,19 @@ var ListPage = React.createClass({
 	},
 
 	render: function render() {
-		return React.createElement('div', {}, React.createElement(Header, {}), React.createElement('a', {className: "item-add", href: "#newitem"}, "Add+"), React.createElement('div', {}, React.createElement(ListItems, { items: this.props.items }) //populating the list page with the list
+		return React.createElement('div', {}, React.createElement('h1', {className: "item-header"}, "BC Inventory", React.createElement('a', {className: "item-add", href: "#newitem"}, "Add+")), React.createElement('div', {}, React.createElement(ListItems, { items: this.props.items }) //populating the list page with the list
 		));
-	}
+	},
+    
+    
+//    	render: function render() {
+//		return (//creating item page view
+//			React.createElement('div', {}, React.createElement('h1', {className: "item-header"}, this.props.name + " (" + this.props.year + ")", React.createElement('a', {className: "item-add", href: "#newitem"}, "Add+"), React.createElement('a', {className: "back", href: "#"}, "Back"), React.createElement('hr', {})), React.createElement('div', { className: 'item-view' }, React.createElement('p', { className: 'list-name-header' },
+//            React.createElement('div', {className: "bottle-div"}, this.props.description, React.createElement('img', { className: "bottle", src: this.props.image, width: '400px' })))))
+//		);
+//	}
+    
+    
 });
 
 //creating pages to showcase the details of the individual list items.
@@ -176,19 +186,19 @@ var AddEntryForm = React.createClass({
 		//setting up the form
 		return React.createElement('form', {}, React.createElement('input', {
 			type: 'text',
-			placeholder: 'Name of Accomplishment',
+			placeholder: 'Name',
 			value: this.props.listItem.name,
 			onChange: this.onNameChange
 		}), React.createElement('input', {
 			type: 'text',
-			placeholder: 'Year',
+			placeholder: 'ml',
 			value: this.props.listItem.year,
 			onChange: this.onYearChange
 		}), React.createElement('textarea', {
 			placeholder: 'Description',
 			value: this.props.listItem.description,
 			onChange: this.onDescriptionChange
-		}), React.createElement('button', { type: 'button', onClick: this.onSubmit }, 'Add Accomplishment'));
+		}), React.createElement('button', { id: "add-button", type: 'button', onClick: this.onSubmit }, 'Add'));
 	}
 });
 
@@ -203,9 +213,23 @@ var FormView = React.createClass({
 	},
 
 	render: function render() {
-		return React.createElement('div', {}, React.createElement(Header3, {}), React.createElement(NavMenu, {}), React.createElement('div', {}, React.createElement(AddEntryForm, { listItem: this.props.listItem, onChange: this.props.onNewListItemChange, onSubmit: this.props.onSubmitNewItem })));
+		return React.createElement('div', {className: "add-form"}, React.createElement('h1', {className: "item-header"}, "Add Item", React.createElement('a', {className: "back", href: '#' }, 'Back')), React.createElement('hr', {}), React.createElement('div', {}, React.createElement(AddEntryForm, { listItem: this.props.listItem, onChange: this.props.onNewListItemChange, onSubmit: this.props.onSubmitNewItem })));
 	}
 });
+        
+        
+//let Footer = React.createClass({
+//	propTypes: {
+//		text: React.PropTypes.string,
+//	},
+//	render: function() {
+//		return (
+//			React.createElement('div', {className: 'wFooter'}, 
+//				React.createElement('button', {className: 'footer'}, ""
+//					'')
+//			)
+//		);}
+//});         
 
 //setting up switch statement so user can navigate pages
 var state = {};
