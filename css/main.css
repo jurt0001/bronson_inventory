@@ -5,12 +5,14 @@ ul {
 }
 
 .list-menu{
-    width: 60%;
+    width:80%;
     margin: 0 auto;
     margin-top: 10px;
     background-color: white;
-    padding-top: -30px;
+    padding-top: -30px
+    
 }
+
 
 
 .list-menu li {
@@ -18,8 +20,9 @@ ul {
     border: solid lightblue 1px;
     margin-left: -40px;
     margin-bottom: 10px;
-    background-color: lightblue;
+   /** background-color: lightblue;**/
     height: 100px;
+    /**border-bottom: grey 3px;**/
    
 }
 
@@ -67,7 +70,7 @@ form > textarea {
 .nav-menu {
     border-radius: 10px;
     border: dashed black 2px;
-    width: 60%;
+    width: 95%;
     margin: 0 auto;
     list-style-type: none;
     font-size: 1.3em;
@@ -92,11 +95,30 @@ form > textarea {
 }
 
 .bottle{
-    
-    float: right;
     z-index: 200;
-    margin-right: -100px;
-    margin-top: -50px;
-   
+    width: 100%;
     
 }
+
+.bottle-div{
+    width: 100%;
+    margin: 0 auto;    
+}
+
+.item-header{
+    text-align: center;
+    
+}
+
+.item-add{
+    float: right;
+    margin-right: 5px;
+    
+}
+
+.back{
+    float: left;
+    margin-left: 5px;
+    
+}
+

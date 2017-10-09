@@ -19,9 +19,11 @@ var Header = React.createClass({
 	propTypes: {},
 	render: function render() {
 		return React.createElement('div', { className: 'header' }, //setting header className
-		React.createElement('p', {}, 'Bronson Centre Inventory'), //hardcoding Page Title
-		React.createElement('p', {}, React.createElement('img', { src: 'images/launcher_white_copy.png', width: '200px' }) //creating logo and setting size
-		));
+		React.createElement('p', {}, 'Bronson Centre Inventory') //hardcoding Page Title
+		//,React.createElement('p', {}, React.createElement('img', { src: 'images/launcher_white_copy.png', width: '200px' }) //creating logo and setting size
+	//	)
+                                  
+                                  );
 	}
 });
 
@@ -34,8 +36,9 @@ var Header2 = React.createClass({
 	render: function render() {
 		return React.createElement('div', { className: 'header' }, //setting header className
 		React.createElement('p', {}, 'Item Details', //hardcoding Page Title
-		React.createElement('p', {}, React.createElement('img', { src: 'images/launcher_white_copy.png', width: '200px' }) //creating logo and setting size
-		)));
+		//React.createElement('p', {}, React.createElement('img', { src: 'images/launcher_white_copy.png', width: '200px' }) //creating logo and setting size
+		//)
+                           ));
 	}
 });
 
@@ -62,8 +65,8 @@ var NavMenu = React.createClass({
 		return React.createElement('ul', { className: 'nav-menu' }, //creating an underordered list. assigning className
 		React.createElement('li', {}, //adding a menu item
 		React.createElement('a', { href: '#' }, 'Inventory Items') //directs to default hash
-		), React.createElement('li', {}, //adding a menu item
-		React.createElement('a', { href: '#newitem' }, 'Add an Item') //directs to newitem page
+		), React.createElement('li', {} //adding a menu item
+		//,React.createElement('a', { href: '#newitem' }, 'Add an Item') //directs to newitem page
 		));
 	}
 });
@@ -117,8 +120,8 @@ var ListPage = React.createClass({
 	},
 
 	render: function render() {
-		return React.createElement('div', {}, React.createElement(Header, {}), React.createElement(NavMenu, {}), React.createElement(ListItems, { items: this.props.items }) //populating the list page with the list
-		);
+		return React.createElement('div', {}, React.createElement(Header, {}), React.createElement('a', {className: "item-add", href: "#newitem"}, "Add+"), React.createElement('div', {}, React.createElement(ListItems, { items: this.props.items }) //populating the list page with the list
+		));
 	}
 });
 
@@ -136,7 +139,8 @@ var ItemPage = React.createClass({
 
 	render: function render() {
 		return (//creating item page view
-			React.createElement('div', {}, React.createElement(Header2, {}), React.createElement(NavMenu, {}), React.createElement('div', { className: 'list-menu' }, React.createElement('h2', { className: 'list-name-header' }, this.props.name + " (" + this.props.year + ")"), React.createElement('p', { className: 'list-name-header' }, this.props.description), React.createElement('img', { className: "bottle", src: this.props.image, width: '400px' })))
+			React.createElement('div', {}, React.createElement('h1', {className: "item-header"}, this.props.name + " (" + this.props.year + ")", React.createElement('a', {className: "item-add", href: "#newitem"}, "Add+"), React.createElement('a', {className: "back", href: "#"}, "Back"), React.createElement('hr', {})), React.createElement('div', { className: 'item-view' }, React.createElement('p', { className: 'list-name-header' },
+            React.createElement('div', {className: "bottle-div"}, this.props.description, React.createElement('img', { className: "bottle", src: this.props.image, width: '400px' })))))
 		);
 	}
 });
