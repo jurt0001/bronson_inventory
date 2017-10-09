@@ -11,7 +11,7 @@ Updated: Oct 1, 2017
 *****************************************************************/
 
 
-let items = [
+var items = [
 	{key: 1, id: 1, name: 'Beer', year: '700ml', description: "", image: 'images/beer.png'},
 	{key: 2, id: 2, name: 'White Wine', year: '2017', description:  "", image: 'images/white_wine.png'},
 	{key: 3, id: 3, name: 'Red Wine', year: '2017', description: "", image: 'images/red_wine.png'},
